@@ -5,7 +5,7 @@
 # main.py 2021/9/11 13:01
 import json
 import re
-import sys
+import os
 import logging
 import time
 import random
@@ -16,8 +16,7 @@ import spider
 import utils
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        config.data = json.loads(re.sub('#(.*)\n', '\n', sys.argv[1]).replace("'", '"'))
+    config.data = json.loads(os.getenv("DATA"))
     if utils.get_GMT8_timestamp() > utils.str_to_timestamp(config.data['deadline'], '%Y-%m-%d'):
         logging.info("超出填报日期")
         exit(-1)
