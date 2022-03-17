@@ -2,7 +2,7 @@ name: healthReport
 
 on:
   schedule:
-    - cron: '0 9,11 * * *' # 东八区时间 (GMT+8) 的 17:00、19:00
+    - cron: '0 0,2 * * *' # 东八区时间 (GMT+8) 的 17:00、19:00
   workflow_dispatch: # add manually button
 
 jobs:
